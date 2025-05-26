@@ -4,15 +4,15 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let columns = Math.floor(canvas.width / 20);
+let columns = Math.floor(canvas.width / 24);
 let drops = Array(columns).fill(1);
-let text = "Te amo 💖";
+let text = "Te amo 💕";
 
 function drawMatrix() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "#ff69b4";
-  ctx.font = "20px Arial";
+  ctx.font = "30px Arial";
 
   for (let i = 0; i < drops.length; i++) {
     ctx.fillText(text, i * 20, drops[i] * 20);
@@ -23,7 +23,7 @@ function drawMatrix() {
   }
 }
 
-setInterval(drawMatrix, 50);
+setInterval(drawMatrix, 70);
 
 // Firework explosion on click
 document.addEventListener("click", showLoveBurst);
@@ -36,7 +36,7 @@ function showLoveBurst(e) {
     burst.className = "te-amo-burst";
     burst.style.left = `${e.clientX - 20 + Math.random() * 40}px`;
     burst.style.top = `${e.clientY - 20 + Math.random() * 40}px`;
-    burst.textContent = "💖 Te amo 💖";
+    burst.textContent = "💕 Te amo 💕";
     container.appendChild(burst);
 
     setTimeout(() => {
