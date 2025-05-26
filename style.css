@@ -1,0 +1,46 @@
+:root {
+  --matrix-txt: #ff69b4;
+  --bg-color: #000;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  font-family: "Arial", sans-serif;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#explosions {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.te-amo-burst {
+  position: absolute;
+  color: var(--matrix-txt);
+  font-weight: bold;
+  animation: burst 1s ease-out forwards;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+@keyframes burst {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) translateY(-100px);
+    opacity: 0;
+  }
+}
